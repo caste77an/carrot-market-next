@@ -1,5 +1,5 @@
-import FormButton from "@/components/form-button";
-import FormInput from "@/components/form-input";
+import Button from "@/components/button";
+import Input from "@/components/input";
 import { ChatBubbleOvalLeftEllipsisIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { useFormState } from "react-dom";
@@ -15,28 +15,28 @@ export default function CreateAccount() {
         <h2 className="text-xl">Fill in the form below to join!</h2>
       </div>
       <form className="flex flex-col gap-3">
-        <FormInput
+        <Input
           name="email"
           type="email"
           placeholder="Email"
           required
           errors={state?.fieldErrors.email}
         />
-        <FormInput
+        <Input
           name="password"
           type="password"
           placeholder="Password"
           required
           errors={state?.fieldErrors.password}
         />
-        <FormInput
+        <Input
           name="confirm_password"
           type="password"
           placeholder="Confirm Password"
           required
           errors={state?.fieldErrors.confirm_password}
         />
-        <FormButton loading={false} text="Create account" />
+        <Button text="Create account" />
       </form>
       <div className="w-full h-px bg-neutral-500" />
       <div>
